@@ -1,0 +1,30 @@
+/*
+복합 선택자 이면서 일치선택자!
+span.orange {
+    coler : red;
+    이거면 span이면서 class가 orange여야한다!
+}
+
+자식 선택자!
+ul안에 있는 자식요소를 찾음 li를 찾아서 그중 .orange 클래스를 찾는다!
+ul > .orange {
+    coloer : red;
+}
+
+하위 선택자 -> div의 하위요소 중에 .orange를 찾음! 띄어쓰기를 해서 하위선택자로 봄!
+div .orange
+{
+    color : red;
+}
+
+같은 부모를 공유하는 형제 선택자! -> 일단 .orange클래스를 찾고
+다음 즉 내꺼보다 아래코드! 형제 요소중에 li 태그를 찾는다!
+.orange + li {
+    color : red;
+}
+
+일반 형제 선택자! -> 이전 다음 형제 모두 찾음!
+.orange ~ li {
+    color : red;
+}
+*/

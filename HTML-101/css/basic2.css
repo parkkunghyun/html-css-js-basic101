@@ -1,0 +1,111 @@
+/*
+가상선택자 -> css에서 동작을 제어를 할 수 있는 선택자!
+hover - 마우스 올리면 바꿔줌
+active - 마우스를 클릭하는 동안 바뀜!!
+focus - 포커스 되면 선택 -> 인풋이나 A 태그등
+
+transition -> 그 초만큼 동안 변경이 됨!
+
+*/
+/*
+.fruits span:first-child {
+  color : red;
+}
+fruits안에 자식 span 중 첫번째!
+
+.fruits h3:last-child {
+  color: orange;
+}
+.fruits *:nth-child(2) {
+  color : red;
+}
+여기서 nth-child(n) -> n은 0부터 시작됨!
+nth-child(2n) 하면 2곱한 인덱스만 바뀜! 
+
+.fruits *:not(span) {
+  color: blue;
+}
+
+ 가상의 요소를 만들어서 앞에 넣는다!
+ 내용을 무조건 명시해줘야함!!! content: ""라도 적어줘야한다!
+.box::before {
+  content: "앞!";
+}
+<div class ="box">
+  Content!
+</div>
+==> 앞!Content! 가 결과임! -> before는 인라인으로 들어가나봄
+
+.box::after { content: "뒤!"; }
+
+속성선택자 -> 속성의 이름을 가지고 선택 이때는 []안에 속성 적기!
+[disabled] {
+  color: red; // 즉 disabled로 되어있는 애들은 색깔을 레드로 바꾼다!!
+}
+
+[type] { // type 속성 가지는 모든 애들을 전부 바꿈! 유용하지는 않음
+  color : red;
+}
+
+[type="password"] {
+  color: onrange; // 이건 좀 유용할듯
+}
+
+<input type="text">
+<input type="password">
+<span data-fruit-name="apple">사과</span>
+
+스타일 상속
+.animal { -> 근데 애 안에 자식들도 전부 빨강됨!!!
+  color : red;
+}
+글자 스타일이 주로 상속됨! 글자정렬 글자 두께 글자 색상 크기 등
+
+강제 상속
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+}
+.child {
+  width: 100px;
+  height: inherit; -> 상속! 부모의 높이를 상속 받는다! 
+  position: fixed;
+  top:100px;
+  right: 10px;
+  background-color: inherit;
+}
+
+선택자 우선순위 - 점수가 높은 선언이 우선!
+
+div {color : red !important; }
+
+!important > id > class > tag > * 이거 순임!
+!important가 걍 1등임 무조건!
+
+
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition: 1s;
+}
+
+.box:hover {
+  width: 300px;
+  background-color: royalblue;
+}
+
+.box:active {
+  width: 100px;
+  background-color: green;
+}
+
+input {
+  margin-top: 20px;
+}
+input:focus {
+  background-color: orange;
+}

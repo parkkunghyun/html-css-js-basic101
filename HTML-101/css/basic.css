@@ -1,0 +1,71 @@
+/*
+속성을 보고 머리로 그려야함!
+박스모델 글꼴 문자 배경 플렉스 등등
+
+박스모델 -> html 가로 세로 박스를 제어!
+div는 기본적으로 블록이어서 가로세로를 전부 가진다!
+블록은 높이는 줄어들려고 하고 너비는 늘어나려고 한다!
+
+auto -> 브라우저가 너비를 계산 -> 블록인지 인라인인지 등으로 확인
+단위 -> px, em, vw등 단위로 저장
+
+span -> 인라인요소, 기본 콘텐츠 크기만큼 자동으로 줄어듬!
+max-width, max-height -> 요소가 커질수있는 최대 너비 높이
+0,auto,px em등이 있다
+
+차고로 부모div가 가로 가 설정되었을때 자식 너비 없으면 자동으로 그만큼이 최대다!
+
+css단위
+px - 하나의 디바이스가 표현할수있는 하나의 점 1920 * 1080 등 (절대단위)
+% - 상대적 백분율, 어떤걸 기준으로 % 크기를 줄지!!  부모요소를 기준!
+em - 요소의 글꼴크기 1em = 10px 예제임
+rem - 루트요소(html)의 글꼴 크기! 
+vw - 뷰포트 가로 너비 백분율, 동적으로 됨!
+vh - 뷰포트 세로 너비 백분율
+
+상속이 되는 기준은 대부분 글자를 해줌!
+
+마진 -margin 요소의 외부 여백!
+음수도 사용이 가능! -> 0, auto, px,ecm,vw등등
+margin: 10px 20px -> 상하 좌우
+margin: 10px 20px 30px -> 상 좌우 아래
+margin: 10px 20px 30px 40px -> 상부터 시계방향
+
+padding - 요소의 내부 여백을 지정! 요소자체 크기도 커짐!
+
+border - 선두께 선종류 선색상
+
+border-radius : 20px; -> 모서리가 둥글게 깎인다
+px수지는 그만큼의 반지름을 가진 원을 만든다!
+*/
+
+html {
+  font-size: 16px; /*기본임*/
+}
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: royalblue;
+  font-size: 10px;
+}
+.child {
+  font-size: 5px;
+  width: 50vw;
+  height: 100px;
+  background-color: orange;
+}
+
+.container {
+}
+.container .item {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border: 4px solid red;
+  margin: 20px;
+}
+
+.container .item:first-child {
+  padding: 20px;
+  border: 10px solid blue;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      div {
+        font-size: 50px;
+        color: blue;
+        text-decoration: underline;
+      }
+      /*선택자 {속성 : 값; }
+        속성은 내가 적용할 스타일의 종류! 
+
+        css선언 방식
+        내장, 링크, 인라인, @import방식
+
+        지금이 내장방식임!
+        인라인방식은 요소안에 작성!
+        <div style="color: red; margin: 20px;">hello</div>
+
+        나중에 bundle로 묶기때문에 각각 파일로 관리하는게 좋다!
+
+        @import방식 - main.css에다가
+        즉 css문서안에서 다른 css파일을 가져오는 방식! 이건 직렬이다!
+        @import url("./box.css");
+        div {
+            colr: red;
+        }
+
+        링크로 외부 css문서를 한번에 다 가져옴! 그래서 병령
+        */
+
+      /*
+        css 선택자
+        기본 복합 가상클래스 가상요소 속성
+        
+        기본선택자 -> * 즉 모든 요소를 선택!
+        * { color: red;}
+        복합 선택자 -> 태그이름을 선택!
+        li { color : red;}
+        가상 클래스 -> class 이름을 선택!
+        .orange {color : red;}
+        가상 요소 -> id를 선택
+        #orange {color : red;}
+        */
+    </style>
+  </head>
+  <body>
+    <!--특별한 의미가 없음! 그냥 영역을 구분 해줌!-->
+    <div>
+      <!--제목을 의미! 1-6까지 있음 블록요소!-->
+      <h1>오늘의 날씨</h1>
+      <!--문장을 의미! 인라인이 아닌 블록이다! -->
+      <p>중부 집중호우</p>
+      <!--img는 이미지 삽입!-->
+      <img src="img/weather.jpg" alt="12호 태풍" />
+    </div>
+    <div>
+      <!--ul은 순서가 필요없음! 블록요소, 그냥묶을때사용!-->
+      <ul>
+        <li>사과</li>
+        <li>딸기</li>
+      </ul>
+      <!--순서 필요!-->
+      <ol>
+        <li>1번째</li>
+        <li>2번째</li>
+      </ol>
+    </div>
+    <div><span>span은 의미없은 인라인</span>백두산이 마르고 닳도록 <br /></div>
+    <!--Anchor 즉 닻을 통해 하이퍼링크를 지정하는 요소 인라인이다!-->
+    <a href="https://www.naver.com">NAVER</a>
+    <!-- target="_blank"면 새 탭에서 열림!-->
+    <a href="https://www.google.com" target="_blank">Google</a>
+
+    <div>
+      <!-- inline-block 기본은 인라인이면서 블록도 됨!! => 상자는 가로 세로를 지정할수있다!-->
+      <input type="text" value="HEROPY" placeholder="이름을 입력하세요!" />
+      <input type="text" disabled />
+      <!--입력 요소 비활성화!-->
+    </div>
+    <div>
+      <!--라벨로 하나로 묶었다! 제목 인라인임-->
+      <label for=""> <input type="checkbox" /> Apple </label>
+      <label for=""> <input type="checkbox" checked /> Banana </label>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td>A</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>D</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
