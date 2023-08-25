@@ -1,0 +1,158 @@
+/*
+box-sizing -> border와 padding이 들어가면 원래 사이즈보다 커진다!
+
+box-sizing: border-box;
+내부여백과 테두리를 width와 heigh만큼 하고 싶다면 border-size로 만들기!
+디폴트는 content-box이다!
+
+단 margin은 사이즈 포함에서 제외다!!
+
+overflow-> visible- 걍보여주기 이게 기본 hidden - 숨김 auto -> 스크롤바
+부모영역에 적어줘야함!
+
+요소 화면에 어떻게 보여줄지 특성!
+display
+-> block 상자 요소
+inline 글자 제어
+inline-block 글자 상자요소 (가로 세로 값 지정 가능)
+flex- 1차원 레이아웃 - 수평 정렬에 용이!
+gird - 2차원 레이아웃 - 행렬을 사용!
+none - 안보여줌
+
+opacity -> 1 불투명, 0-1
+
+글꼴 -> 
+font-style-> normal, italic
+font-weight-> 400이 기본, 100-900 사이 적어주면 됨! ,bold-700
+font-size-> px em rem 기본 16px
+line-height -> 한줄의 높이를 지정, 요소의 글꼴 크기의 배수로 지정
+font-family -> 글의 폰트를 지정!
+
+문자 ->
+color -> 글자 색상
+text-align -> 문자의 수평 정렬방식 left right center
+text-decoration -> none 선을 추가할지 말지
+
+배경
+background-color-> 색상지정
+background-image: url("");
+background-repeat: no-repeat; 반복 금지!
+background-position: center, top left 
+background-attachment: scroll-> 같이 스크롤 , fixed-> 뷰포트에 고정!
+
+
+배치 
+position: -> 꼭 기준을 설정해야함! 그게 이 속성!!
+    static: 기준 없음
+    absolute : 위치상 부모 요소를 기준으로 배치-> 나한테 적음! 대신 자식끼리 겹친다
+    relative : 내 자신을 기준! -> 그래서 이걸 부모에 적으면 자식은 여기 안에서 논다!
+    fixed-> 처음부터 뷰포트를 기준 그래서 겹칠수도 있다!
+
+z-index -> 놔두는거 우선순위 결정! 순서 높을수록 위에 쌓인다!
+top bottom left right를 적을 수 있게 기준을 마련해야함!
+
+position: relative; ->이거를 부모에 적고
+position: absolute: ->이걸 자식에 적으면 이제 위치상 부모를 찾을 수 있디!
+
+flex -> 정렬!!!
+flex-container -> 부모 즉 기준이 되는 큰 틀 위치 지정을 할 수 있다
+flex-item -> 자식 요소들 정렬 관련 속성이 있다
+
+display: flex -> 1차원 수평으로 놔둠, flex-container로 보여줌
+display: inline-flex -> 플렉스 컨테이너가 인라인으로 되버림! 
+
+flex-direction -> row 행 축 좌우로 둠 column 위아래
+
+flex-wrap -> wrap, nowrap 줄바꿈 있는지 없는지!
+이게 width 가 작으면 여러줄로 두게 됨! flex-wrap: wrap을 해줘야함 그때는!
+그게 안되어있으면 어떻게든 한줄에 꾸겨버림!!
+
+justify-content ->space-between flex-start, center, flex-end 를 해서 수평을 어디에 정렬할지
+align-items-> 한 줄의 정렬! -> 이게 많이 씀!! 
+
+flex-grow: 1 -> 1: 1: 1비율로 안에 item들이 늘어난다!
+flex-shrink: 1 -> 1이 기본이고 이건 비율 감소!
+flex-basis: 0; -> 요소의 기본 너비
+
+order -> 아이템 순서 -> 숫자 작을 수록 앞에 정렬이 된다!
+
+*/
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  opacity: 1;
+}
+
+.item:first-child {
+  border: 4px solid red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 200px;
+  height: 150px;
+  background-color: royalblue;
+  margin: 20px;
+  padding: 20px;
+  overflow: auto;
+}
+.child {
+  width: 300px;
+  height: 100px;
+  background-color: orange;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic; /*기울기*/
+  font-family: serif; /*글꼴 다양함!*/
+}
+p {
+  width: 350px;
+  border: 1px solid;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1.4; /* 한 줄에 대한 높이! -> 16 * 1.4 */
+}
+
+a {
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: orange;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  background-image: url("./경로");
+  background-size: 200px; /*배경 이미지 사이즈 줄이기 -> 너무 줄이면 여러개로 나옴!*/
+  background-repeat: no-repeat; /*한개만*/
+  background-position: center;
+}
+
+.container {
+  background-color: royalblue;
+  display: flex;
+}
+
+.container .item {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.container .item:nth-child(3) {
+  flex-grow: 2;
+}
