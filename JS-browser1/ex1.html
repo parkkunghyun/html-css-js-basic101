@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>시작</div>
+    <ul>
+      <li>항목</li>
+    </ul>
+    <div>끝</div>
+
+    <script>
+      for (let i = 0; i < document.body.childNodes.length; i++) {
+        alert(document.body.childNodes[i]);
+      }
+
+      for (let elem of document.body.children) {
+        alert(elem); // DIV UL DIV SCRIPT
+      }
+    </script>
+  </body>
+</html>
