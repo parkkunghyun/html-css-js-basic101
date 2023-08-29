@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+.container h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.container span {
+  display: inline-block;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.container .button-container {
+}
+
+.container .button-container .btn {
+  margin: 0px 5px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid skyblue;
+  padding: 4px;
+  border-radius: 5px;
+}
