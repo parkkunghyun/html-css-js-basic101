@@ -26,9 +26,6 @@ body {
   font-size: 3rem;
 }
 
-.container .button-container {
-}
-
 .container .button-container .btn {
   margin: 0px 5px;
   background-color: rgba(0, 0, 0, 0);
